@@ -23,3 +23,31 @@
     }
   ];
 </script>
+
+<div class='container'>
+  <h1 class='logo'>TODO sample</h1>
+
+  <h2>Svelte Todo App</h2>
+  <input type="text" class='todo-input' placeholder='Insert your todo here' bind:value={newTodoTitle} on:keydown={addTodo}>
+
+  {#each filteredTodos as todo}
+    <div class='todo-item'>
+      <TodoItem
+        {...todo}
+        on:deleteTodo={handleDeleteTodo}
+        on:toggleComplete={handleToggleComplete}
+      />
+    </div>
+  {/each}
+
+  <div class='inner-container'>
+    <div>
+      <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'all'}">All</button>
+      <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'active'}">Active</button>
+      <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'completed'}">Completed</button>
+    </div>
+    <div>
+      <button on:click-{clearCompleted}>ClearCompleted</button>
+    </div>
+  </div>
+</div>
