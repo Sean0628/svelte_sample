@@ -45,6 +45,10 @@
     currentFilter = newFilter;
   }
 
+  function clearCompleted() {
+    todos = todos.filter(todo => !todo.completed);
+  }
+
 
   $: todosRemaining = filteredTodos.filter(todo =>
     !todos.completed).length;
@@ -75,7 +79,7 @@
       <button on:click={() => updateFilter('completed')} class:active="{currentFilter === 'completed'}">Completed</button>
     </div>
     <div>
-      <button on:click-{clearCompleted}>ClearCompleted</button>
+      <button on:click={clearCompleted}>ClearCompleted</button>
     </div>
   </div>
 </div>
