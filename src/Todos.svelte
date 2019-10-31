@@ -22,6 +22,19 @@
       completed: false
     }
   ];
+
+  function addTodo(event) {
+    if (event.key === 'Enter') {
+      todos = [...todos, {
+        id: nextId,
+        title: newTodoTitle,
+        completed: false
+      }];
+
+      nextId = nextId + 1;
+      newTodoTitle = '';
+    }
+  }
 </script>
 
 <div class='container'>
