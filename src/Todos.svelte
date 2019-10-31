@@ -36,6 +36,12 @@
     }
   }
 
+  function checkAllTodos(event) {
+    todos.forEach(todo => todo.completed = event.target.checked);
+    todos = todos;
+  }
+
+
   $: todosRemaining = filteredTodos.filter(todo =>
     !todos.completed).length;
   $: filteredTodos = currentFilter === 'all' ? todos : currentFilter
