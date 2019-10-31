@@ -67,8 +67,8 @@
   <div class='inner-container'>
     <div>
       <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'all'}">All</button>
-      <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'active'}">Active</button>
-      <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'completed'}">Completed</button>
+      <button on:click={() => updateFilter('active')} class:active="{currentFilter === 'active'}">Active</button>
+      <button on:click={() => updateFilter('completed')} class:active="{currentFilter === 'completed'}">Completed</button>
     </div>
     <div>
       <button on:click-{clearCompleted}>ClearCompleted</button>
