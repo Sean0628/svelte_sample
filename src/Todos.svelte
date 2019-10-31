@@ -41,6 +41,10 @@
     todos = todos;
   }
 
+  function updateFilter(newFilter) {
+    currentFilter = newFilter;
+  }
+
 
   $: todosRemaining = filteredTodos.filter(todo =>
     !todos.completed).length;
