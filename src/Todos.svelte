@@ -130,6 +130,16 @@
     </div>
   {/each}
 
+  <div class="inner-container">
+    <div>
+      <label>
+        <input class="inner-container-input" type='checkbox' on:change={checkAllTodos}>
+        Check All
+        <div>{todosRemaining} items left</div>
+      </label>
+    </div>
+  </div>
+
   <div class='inner-container'>
     <div>
       <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'all'}">All</button>
