@@ -49,6 +49,10 @@
     todos = todos.filter(todo => !todo.completed);
   }
 
+  function handleDeleteTodo(event) {
+    todos = todos.filter(todo => todo.id !== event.detail.id);
+  }
+
 
   $: todosRemaining = filteredTodos.filter(todo =>
     !todos.completed).length;
