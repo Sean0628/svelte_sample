@@ -35,7 +35,7 @@
   export let title;
   export let completed;
 
-  const dipatch = createEventDispatcher();
+  const dispatch = createEventDispatcher();
 
   function deleteTodo() {
     dispatch('deleteTodo', {
